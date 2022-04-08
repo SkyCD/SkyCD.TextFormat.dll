@@ -1,10 +1,9 @@
-Imports SkyCD_Simple
-Imports SkyCD
-Imports SkyCD.Libraries.AdvancedFunctions.Strings
-Imports SkyCD.App
+Imports SkyCD.Simple
+Imports SkyCD.AdvancedFunctions.Strings
+Imports Convert2 = SkyCD.AdvancedFunctions.Convert
 
 Public Class Main
-    Inherits SkyCD_Simple.skycd_simple
+    Inherits skycd_simple
     Implements iFileFormat
 
     Private db As Database.iConnection
@@ -155,7 +154,7 @@ Public Class Main
                     Clx(O) = Me.Items(Arx.Item(I)).Name
                 End If
             Else
-                Clx(O) = "[" & Long2Size(Val(Me.Items(Arx.Item(I)).AdvancedInfo.Item("Size"))) & "] " & Me.Items(Arx.Item(I)).Name
+                Clx(O) = "[" & Convert2.Long2Size(Val(Me.Items(Arx.Item(I)).AdvancedInfo.Item("Size"))) & "] " & Me.Items(Arx.Item(I)).Name
             End If
             O = O + 1
         Next
@@ -216,7 +215,7 @@ start:
             Return Text
         End If
         If Me.Items(ID).ItemType = scdItemType.scdFile Then
-            Text = "[" & Long2Size(Val(Me.Items(ID).AdvancedInfo.Item("Size"))) & "] " & Me.Items(ID).Name
+            Text = "[" & Convert2.Long2Size(Val(Me.Items(ID).AdvancedInfo.Item("Size"))) & "] " & Me.Items(ID).Name
             ID = Me.Items(ID).ParentID
             GoTo start
         End If
