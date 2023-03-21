@@ -41,6 +41,9 @@ jobs:
   automerge:
     if: ${{ github.actor == 'dependabot[bot]' }}
     needs: build-and-test
+    permissions:
+      pull-requests: write
+      contents: write    
     runs-on: ubuntu-latest
     steps:
       # This first step will fail if there's no metadata and so the approval
