@@ -1,13 +1,9 @@
-name: build and test
+name: On pull request
 
 on:
   pull_request:
-    branches: [ main ]
-    paths:
-    - '**.vb'
-    - '**.vbproj'
-    - '*.sln'
-    - '.github/workflows/test.yml'
+    branches:
+      - main
 
 jobs:
   build-and-test:
@@ -41,3 +37,13 @@ jobs:
     
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+
+  automerge:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.actor == 'dependabot[bot]' }}
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: JoseThen/comment-pr@v1.1.1
+        with:
+          comment: '@dependabot merge'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
