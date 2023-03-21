@@ -105,7 +105,7 @@
     <EmbeddedResource Remove="Backup\My Project\Resources.resx" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.310801">
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.410601">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="SkyCD.AdvancedFunctions.dll" Version="0.1.3" />
