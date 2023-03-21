@@ -4,10 +4,9 @@ on:
   pull_request:
     branches: [ main ]
     paths:
-      - '.github/workflows/*.yml'
-      - '.github/*.yml'
-    paths-ignore:
-      - '.github/workflows/test.yml'
+      - '.github/workflows/automerge.yml'
+      - '.github/workflows/auto-release.yml'
+      - '.github/dependabot.yml'
   workflow_run:
     workflows: 
       - "build and test"
@@ -17,7 +16,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' and github.actor == 'dependabot[bot]' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.actor == 'dependabot[bot]' }}
     steps:
       # This first step will fail if there's no metadata and so the approval
       # will not occur.
