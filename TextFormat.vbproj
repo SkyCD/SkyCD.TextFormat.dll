@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net5.0-windows7.0</TargetFramework>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
@@ -108,7 +108,7 @@
     <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.410601">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="SkyCD.AdvancedFunctions.dll" Version="0.3.0" />
+    <PackageReference Include="SkyCD.AdvancedFunctions.dll" Version="0.4.0" />
     <PackageReference Include="SkyCD.Core.dll" Version="0.3.0" />
     <PackageReference Include="SkyCD.Simple" Version="0.3.0" />
   </ItemGroup>
